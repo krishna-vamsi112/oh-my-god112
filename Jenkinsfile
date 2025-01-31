@@ -19,6 +19,8 @@ pipeline {
                     echo $?
                 '''
             }
+        }
+
         stage('Unit Testing') {
             steps {
                 sh 'npm test'
@@ -26,4 +28,5 @@ pipeline {
         }
     }
 }
+
 
