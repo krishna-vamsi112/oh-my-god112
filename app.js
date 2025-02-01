@@ -18,6 +18,8 @@ mongoose.connect(process.env.MONGO_URI, {
     pass: process.env.MONGO_PASSWORD,
     useNewUrlParser: true,
     useUnifiedTopology: true
+    serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
+    socketTimeoutMS: 45000 // Socket timeout to handle long requests
 }, function(err) {
     if (err) {
         console.log("error!! " + err)
